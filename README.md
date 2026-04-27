@@ -1,72 +1,78 @@
-**Yerel RAG (Retrieval-Augmented Generation) API Motoru**
+# DOCUBOT - Local RAG Learning Project
 
-**Projenin Kısa Açıklaması**
+## 📌 Description
 
-Bu proje, veri gizliliğini (data privacy) korumak amacıyla tamamen yerel donanım üzerinde çalışan, dışarıya kapalı bir RAG arama motorudur. Sistem, İstanbul Okan Üniversitesi öğrenci süreçlerine ait (Staj, Erasmus, Burs vb.) PDF dokümanlarını okuyup vektör uzayında indeksler ve kullanıcının sorularını sadece bu belgeler bağlamında yanıtlar.
+DOCUBOT is a local Retrieval-Augmented Generation (RAG) system designed to answer questions based on a set of PDF documents.
 
-Veri akışı modern bir REST API (FastAPI) mimarisi ile karşılanarak, büyük dil modelinin (LLM) bilgi uydurması (halüsinasyon) kesin olarak engellenir.
+The system processes documents, converts them into vector representations, and retrieves relevant context to generate answers using a local large language model (LLM).
 
----
-
-**Kullanılan Ana Teknolojiler ve Tercih Nedenleri**
-
-Sistemi tasarlarken performans, güvenlik ve **Görevlerin Ayrılığı (Separation of Concerns)** prensiplerine göre aşağıdaki teknolojiler seçilmiştir.
-
-**Ollama & Llama3 (LLM)**  
-Bulut API'lerini kullanmak kurumsal verilerin dışarı çıkması riskini taşıdığı için yerel inference çözümü tercih edilmiştir. Hafif yapısı ve yüksek performansı nedeniyle Llama3 modeli sisteme entegre edilmiştir.
-
-**LangChain**  
-Projeyi modüler ve geliştirilebilir bir orkestrasyona oturtmak için kullanılmıştır. Veri parçalama (chunking) ve LLM zincirleme işlemlerinin yönetimini sağlamaktadır.
-
-**ChromaDB / FAISS (Vektör Veritabanı)**  
-Yüksek hız gereksinimi nedeniyle doküman benzerliği aramalarını milisaniyeler içinde gerçekleştiren vektör veritabanı teknolojisi kullanılmıştır.
-
-**FastAPI & Pydantic**  
-RAG motorunu dış dünyanın kullanımına açmak için tercih edilmiştir. Doğuştan asenkron desteği performansı artırırken, Pydantic sayesinde veri doğrulama işlemleri API katmanında hata yönetimiyle birlikte sunulmuştur.
+This project focuses on data privacy by running entirely on local hardware without relying on external APIs.
 
 ---
 
-**Kurulum ve Çalıştırma Adımları**
+## ⚠️ Note
 
-Projeyi yerel bilgisayarınızda çalıştırmak için aşağıdaki adımları sırasıyla izleyin.
+This project was built as an experimental exploration of RAG systems.
 
-**1. Projeyi Klonlayın ve Klasöre Girin**
+I used AI tools to assist in building parts of the system, and I am currently working on understanding each component and rebuilding it step by step on my own.
+
+This repository represents my learning process, not a fully self-built production system.
+
+---
+
+## 🧠 What I'm Learning
+
+* How RAG (Retrieval-Augmented Generation) systems work
+* Embeddings and vector similarity search
+* FastAPI backend development
+* Working with local LLMs (Ollama)
+* Document processing and chunking strategies
+
+---
+
+## 🛠️ Technologies Used
+
+* Python
+* FastAPI
+* LangChain
+* ChromaDB / FAISS
+* Ollama (Llama3, nomic-embed-text)
+
+---
+
+## ⚙️ How It Works
+
+1. PDF documents are loaded and processed
+2. Text is split into smaller chunks
+3. Each chunk is converted into embeddings
+4. Embeddings are stored in a vector database
+5. User queries are matched with relevant chunks
+6. The LLM generates answers based on retrieved context
+
+---
+
+## 🚀 Setup & Run
 
 ```bash
 git clone https://github.com/yigitalin/DOCUBOT.git
 cd DOCUBOT
-```
-
-**2. Gerekli Kütüphaneleri Yükleyin**
-
-```bash
 pip install -r requirements.txt
 ```
 
-**3. Ollama Modellerini Hazırlayın**
-
-Bilgisayarınızda Ollama'nın kurulu ve çalışıyor olduğundan emin olduktan sonra aşağıdaki modelleri indirin.
+### Prepare Models
 
 ```bash
 ollama pull llama3
 ollama pull nomic-embed-text
 ```
 
-**4. Dokümanlarınızı Ekleyin**
-
-Sistemin analiz etmesini istediğiniz PDF dosyalarını ana dizindeki ilgili klasöre yerleştirin.
-
----
-
-**5. Sunucuyu Başlatın**
-
-Backend servisinin ayağa kaldırılması:
+### Run Backend
 
 ```bash
 python -m uvicorn app:app --host 127.0.0.1 --port 8000
 ```
 
-Arayüzün (Streamlit) başlatılması:
+### Run UI
 
 ```bash
 streamlit run ui.py
@@ -74,22 +80,29 @@ streamlit run ui.py
 
 ---
 
-**6. API Testi (Swagger UI)**
+## 🔮 Future Plans
 
-Tarayıcınız üzerinden aşağıdaki adrese giderek projeyi görsel arayüzden test edebilirsiniz:
-
-```
-http://127.0.0.1:8000/docs
-```
+* Rebuild the system step-by-step without AI assistance
+* Improve retrieval accuracy
+* Add evaluation metrics
+* Optimize chunking and search strategy
 
 ---
 
-**Hazır Olarak Kullanılabilir PDF'ler**
+## 📚 Sample Documents
 
-Aşağıdaki PDF'ler repo içinde ek kaynak dokümanlar olarak sunulmuştur. İsteyen GitHub üzerinden indirip kendi dokuman havuzuna ekleyerek kullanabilir:
+This project includes example PDF documents related to university processes such as:
 
-- [okan_burs_rehberi.pdf](pdfs/okan_burs_rehberi.pdf)
-- [okan_cap_yandal_rehberi.pdf](pdfs/okan_cap_yandal_rehberi.pdf)
-- [okan_erasmus_rehberi.pdf](pdfs/okan_erasmus_rehberi.pdf)
-- [okan_mezuniyet_rehberi.pdf](pdfs/okan_mezuniyet_rehberi.pdf)
-- [okan_staj_yonergesi.pdf](pdfs/okan_staj_yonergesi.pdf)
+* Internship guidelines
+* Erasmus programs
+* Scholarships
+* Graduation requirements
+
+---
+
+## 👤 Author
+
+Yiğit Alın
+Computer Engineering Student
+
+---
