@@ -102,7 +102,7 @@ This project includes example PDF documents related to university processes such
 
 ## 👤 Author
 
-Yiğit Alın -
+Mustafa Yiğit Alın -
 Computer Engineering Student
 
 ---
