@@ -10,7 +10,7 @@ This project focuses on data privacy by running entirely on local hardware witho
 
 ---
 
-## ⚠️ Note
+## ⚠️  Note
 
 This project was built as an experimental exploration of RAG systems.
 
