@@ -18,7 +18,9 @@ I used AI tools to assist in building parts of the system, and I am currently wo
 
 This repository represents my learning process, not a fully self-built production system.
 
----
+
+--- 
+
 
 ## 🧠 What I'm Learning
 
