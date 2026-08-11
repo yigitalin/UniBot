@@ -1,6 +1,6 @@
 # DOCUBOT - Local RAG Learning Project
 
-## 📌 Description
+##  Description
 
 DOCUBOT is a local Retrieval-Augmented Generation (RAG) system designed to answer questions based on a set of PDF documents.
 
@@ -10,7 +10,7 @@ This project focuses on data privacy by running entirely on local hardware witho
 
 ---
 
-## ⚠️  Note
+##   Note
 
 This project was built as an experimental exploration of RAG systems.
 
@@ -22,7 +22,7 @@ This repository represents my learning process, not a fully self-built productio
 --- 
 
 
-## 🧠 What I'm Learning
+##  What I'm Learning
 
 * How RAG (Retrieval-Augmented Generation) systems work
 * Embeddings and vector similarity search
@@ -32,7 +32,7 @@ This repository represents my learning process, not a fully self-built productio
 
 ---
 
-## 🛠️ Technologies Used
+##  Technologies Used
 
 * Python
 * FastAPI
@@ -42,7 +42,7 @@ This repository represents my learning process, not a fully self-built productio
 
 ---
 
-## ⚙️ How It Works
+##  How It Works
 
 1. PDF documents are loaded and processed
 2. Text is split into smaller chunks
@@ -53,7 +53,7 @@ This repository represents my learning process, not a fully self-built productio
 
 ---
 
-## 🚀 Setup & Run
+##  Setup & Run
 
 ```bash
 git clone https://github.com/yigitalin/DOCUBOT.git
@@ -82,7 +82,7 @@ streamlit run ui.py
 
 ---
 
-## 🔮 Future Plans
+##  Future Plans
 
 * Rebuild the system step-by-step without AI assistance
 * Improve retrieval accuracy
@@ -91,7 +91,7 @@ streamlit run ui.py
 
 ---
 
-## 📚 Sample Documents
+##  Sample Documents
 
 This project includes example PDF documents related to university processes such as:
 
@@ -102,7 +102,7 @@ This project includes example PDF documents related to university processes such
 
 ---
 
-## 👤 Author
+##  Author
 
 Mustafa Yiğit Alın -
 Computer Engineering Student
