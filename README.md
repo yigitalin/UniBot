@@ -1,8 +1,8 @@
-# DOCUBOT - Local RAG Learning Project
+# UNIBOT - Local RAG Learning Project
 
 ##  Description
 
-DOCUBOT is a local Retrieval-Augmented Generation (RAG) system designed to answer questions based on a set of PDF documents.
+UniBot is a local Retrieval-Augmented Generation (RAG) system designed to answer questions based on a set of PDF documents.
 
 The system processes documents, converts them into vector representations, and retrieves relevant context to generate answers using a local large language model (LLM).
 
